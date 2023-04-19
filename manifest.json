@@ -1,0 +1,17 @@
+{
+
+  "description": "Filter video shown to you on recommendation",
+  "manifest_version": 2,
+  "name": "MyFilterBubble",
+  "version": "1.0",
+
+  "permissions": [
+    "activeTab"
+  ],
+
+  "browser_action": { 
+    "default_icon": "icons/filterYoutubeIcon.png",
+    "default_title": "MyFilterBubble",
+    "default_popup": "popup/filter_arg.html"
+  }
+}
