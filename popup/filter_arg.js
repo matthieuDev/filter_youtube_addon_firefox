@@ -5,11 +5,7 @@
 function listenForClicks() {
     document.addEventListener("click", (e) => {
 
-    /**
-    * Insert the page-hiding CSS into the active tab,
-    * then get the beast URL and
-    * send a "beastify" message to the content script in the active tab.
-    */
+
     function filterVideo(tabs) {
         const thresholdSeen = document.getElementById("rangeThresholdView").value;
         browser.tabs.sendMessage(tabs[0].id, {
@@ -31,12 +27,12 @@ function listenForClicks() {
      * Just log the error to the console.
      */
      function reportError(error) {
-        console.error(`Could not beastify: ${error}`);
+        console.error(`Could not send message: ${error}`);
     }
 
     /**
     * Get the active tab,
-    * then call "beastify()" or "reset()" as appropriate.
+    * then call "filterVideo()" or "filterComment()" as appropriate.
     */
     if (e.target.classList.contains("filterVideo")) {
         browser.tabs.query({active: true, currentWindow: true})
